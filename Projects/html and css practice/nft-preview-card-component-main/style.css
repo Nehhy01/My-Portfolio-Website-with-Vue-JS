@@ -1,0 +1,129 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: Hanken;
+  src: url(HankenGrotesk-VariableFont_wght.ttf);
+}
+
+body {
+  color: white;
+  font-family: "Hanken";
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: hsl(217, 54%, 11%);
+  align-items: center;
+  justify-content: center;
+}
+
+.cards {
+    width: 375px;
+    background-color: hsl(216, 50%, 16%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 32px #00000033;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.image:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.image:hover ~ .view {
+    opacity: 90%;
+}
+.image-container {
+  background-color: aqua;
+  border-radius: 14px;
+  position: relative;
+  height: 335px;
+  
+}
+
+.view {
+position: absolute;
+top: 45%;
+left: 45%;
+opacity: 0;
+}
+
+h3 {
+  margin: 16px 0;
+  font-size: 24px;
+}
+
+h3:hover {
+    cursor: pointer;
+   color: hsl(178, 100%, 50%); 
+}
+
+p {
+  font-size: 18px;
+  color: hsl(215, 51%, 70%);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0;
+}
+
+hr {
+  border: 1px solid hsl(215, 32%, 27%);
+}
+
+.days {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: hsl(178, 100%, 50%);
+}
+
+#author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+.author-name {
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+}
+
+.author-name:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+.author-description {
+  font-size: 16px;
+}

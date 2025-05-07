@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.second {
+    width: 100%;
+    transition: all 1.5s ease;
+}
+.container {    
+    height: 300px;    
+    background-color: rgb(7, 130, 0);
+    margin: 50px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+ 
+.scale {
+    scale: 1.5;
+}

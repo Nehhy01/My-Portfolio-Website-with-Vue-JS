@@ -3,7 +3,7 @@
     <div
       class="text-2xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
     >
-      Nehhy <span class="font-black">Portfolio </span>
+      Nehhy <span class="font-black">.Dev </span>
     </div>
 
     <div class="md:hidden z-30">

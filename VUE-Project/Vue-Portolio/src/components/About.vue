@@ -7,6 +7,7 @@
       class="w-full px-5 sm:px-8 md:px-12 lg:px-8 max-w-5xl lg:max-w-7xl mx-auto relative z-10"
     >
       <div class="grid lg:grid-cols-2 gap-10 xl:gap-14  items-center">
+      
         <!-- GRID CHILD 1 -->
         <div class="lg:h-full flex justify-center lg:justify-start order-2 lg:order-1">
           <div class="relative w-full max-w-md">
@@ -82,7 +83,7 @@
 
           <!-- my Tech Stacks -->
           <div
-            class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8"
+            class="grid grid-cols-1 justify-between sm:grid-cols-2 gap-8 pt-8"
             data-aos="fade-up"
             data-aos-delay="300"
           >
@@ -98,7 +99,7 @@
 
           <!-- CTA buttons -->
           <div
-            class="flex gap-4 pt-10 flex-col sm:flex-row"
+            class="flex gap-4 pt-10 flex-col mx-auto lg:mx-0 sm:flex-row"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -116,6 +117,8 @@
               {{ button.text }}
             </button>
           </div>
+
+        
         </div>
       </div>
     </div>

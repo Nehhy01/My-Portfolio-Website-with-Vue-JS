@@ -1,5 +1,5 @@
 <template>
-  <header class="flex justify-between item-center  p-6 bg-opacity-50 relative z-20">
+  <header class="flex max-w-7xl mx-auto justify-between item-center  p-6 bg-opacity-50 relative z-20">
     <div
       class="text-2xl font-bold bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent"
     >
@@ -48,7 +48,7 @@
         </li>
       </ul>
       <div class="mt-8 md:mt-0 md:ml-8"> 
-      <button class="cursor-pointer text-sky-100 font-medium px-6 py-2 bg-linear-to-r from-blue-600 to-cyan-400 rounded-full">
+      <button class="cursor-pointer text-sky-100 font-medium px-6 py-2 bg-linear-to-r from-blue-600 to-cyan-400 rounded-full" @click="toContact">
       Let's Talk
       </button>
       </div>
@@ -65,15 +65,19 @@ const Menu = ref([
   { name: "About Me", href: "#about" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ]);
 const scrollToSection = (href) => {
     isMenuOpen.value = false;
     const section = document.querySelector(href);
-    if(section) {section.scrollInView({behavior: 'smooth'})}
+    if(section) {section.scrollIntoView({behavior: 'smooth'})}
 
 };
+
+function toContact() {
+  const contact = document.querySelector("#contact")
+  contact.scrollIntoView({behavior: 'smooth'})
+}
 </script>
 
 <style scoped></style>

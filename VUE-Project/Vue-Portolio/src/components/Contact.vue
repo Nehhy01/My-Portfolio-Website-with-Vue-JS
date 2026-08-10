@@ -1,5 +1,5 @@
 <template>
-  <section class="overflow-hidden relative py-20">
+  <section class="overflow-hidden relative py-20" id="contact">
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Heading Here -->
       <div class="text-center mb-22" data-aos="fade-up">

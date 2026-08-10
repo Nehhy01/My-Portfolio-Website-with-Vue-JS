@@ -14,18 +14,17 @@
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, porro?
-          adipisicing elit. Vero, porro.
+          Here is how you can work with me, rest assured, you get permium experience from seasoned hands on your projects.
         </p>
       </div>
 
       <!-- Services Cards go here -->
-      <div class="grid grid-col-1 md:grid-col-2 lg:grid-col-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2  gap-8">
         <div
           v-for="(service, index) in services"
           :key="service.id"
           :data-aos="'fade-in'"
-          :data-aos-delay="index * 100 + 100"
+          :data-aos-delay="(index + 1) * 100"
           class="group relativep-8 rounded-2xl bg-linear-to-br from-gray-800/50 to-blue-900/30 backdrop-blur-sm border border-blue-500/20 hover:border-blue-400/40 transition-all p-6 duration-500 hover:transform hover:-translate-y-2"
         >
           <div

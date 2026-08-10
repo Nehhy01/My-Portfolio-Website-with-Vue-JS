@@ -37,7 +37,7 @@
 <div></div>
 
 <!-- right reserved -->
-<div></div>
+<div>@2026 Nehhy. All rights reserved</div>
 
 </div>
 

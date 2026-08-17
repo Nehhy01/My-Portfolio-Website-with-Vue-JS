@@ -1,26 +1,32 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Die from "./Die";
+import Confetti from "react-confetti";
+import { useWindowDimensions } from "./useWindowDimensions";
+import { nanoid } from "nanoid";
 
 function App() {
   const [displayedArray, setDisplayedArray] = useState(() =>
     createRandomDiceArray(),
   );
-  const [gameOver, setGameOver] = useState(true);
+  const [gameOver, setGameOver] = useState(null);
 
   useEffect(() => {
     // check for me if all the values are the same and are all frozen, then switch on game over me.
-    if(displayedArray.every(eachDie => (eachDie.value === displayedArray[0].value) && (eachDie.isFrozen === true))) {
-      console.log("game is over, egbon")
-        setGameOver(true);
-      }
-    else console.log("game on, aburo")
+    if (
+      displayedArray.every(
+        (eachDie) =>
+          eachDie.value === displayedArray[0].value && eachDie.isFrozen,
+      )
+    ) {
+      console.log("game is over, egbon");
+      setGameOver(true);
+    } else console.log("game on, aburo");
   }, displayedArray);
-
 
   function createRandomDiceArray() {
     return Array.from({ length: 10 }, () => ({
-      id: Math.ceil(Math.random() * 600021323),
+      id: nanoid(),
       value: Math.ceil(Math.random() * 6),
       isFrozen: false,
     }));
@@ -41,11 +47,9 @@ function App() {
   }
 
   function Roll() {
-    setGameOver(false)
     // Get me new die values, by......
-    if(gameOver) {setDisplayedArray(() => createRandomDiceArray())}
 
-   else setDisplayedArray((PrevDie) =>
+    setDisplayedArray((PrevDie) =>
       PrevDie.map((prev) => {
         // check if any die is frozen, and leave it
         if (prev.isFrozen) return prev;
@@ -53,21 +57,26 @@ function App() {
         else {
           return {
             ...prev,
-            id: Math.ceil(Math.random() * 600021323),
+            id: nanoid(),
             value: Math.ceil(Math.random() * 6),
           };
         }
       }),
     );
   }
-
+  function newGame() {
+    setGameOver(false);
+    setDisplayedArray(createRandomDiceArray());
+  }
 
   const DiceJSX = displayedArray.map((die) => (
     <Die key={die.id} dieObject={die} handleClick={handleClick} />
   ));
 
+  const { width, height } = useWindowDimensions();
   return (
     <main>
+      {gameOver && <Confetti width={width} height={height} />}
       <h1 className="title">Tenzies</h1>
       <p className="instructions">
         Roll until all dice are the same. Click each die to freeze it at its
@@ -76,11 +85,18 @@ function App() {
 
       <div className="dice-container">{DiceJSX}</div>
 
-       
-        <button onClick={Roll} className={`roll-dice ${ gameOver && 'new-game-btn' }`}>
-          {gameOver ? 'New Game' : 'Roll'}
+      {gameOver && (
+        <button onClick={newGame} className={`roll-dice new-game-btn`}>
+          {" "}
+          New Game
         </button>
-      
+      )}
+
+      {!gameOver && (
+        <button onClick={Roll} className={`roll-dice`}>
+          Roll
+        </button>
+      )}
     </main>
   );
 }
